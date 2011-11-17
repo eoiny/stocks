@@ -1,0 +1,16 @@
+class StocksController < ApplicationController
+
+ def show
+
+ end
+
+ def search
+  #if params[:query]
+    @stock = Ystock.get_stock(params[:query])
+    @input=params[:query]
+ end
+
+
+
+
+end

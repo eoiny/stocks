@@ -1,0 +1,11 @@
+
+<p><h1>Please enter a stock market symbol to get its market value</h1></p>
+<p><i>e.g. goog for Google or yhoo for Yahoo</i></p>
+
+<form action='/search'>
+<input name="query" type="text" />
+
+<input type='submit' value='Search' />
+</form>
+
+

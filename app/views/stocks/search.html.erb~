@@ -1,0 +1,84 @@
+
+<% content_for :javascript do %>
+    <script type="text/javascript">
+var container;
+var particles;
+
+function createParticle(span) {
+  return {
+    elm: span ? span : createParticleElement(),
+    x: 680.0,
+    y: 90.0,
+    dx: Math.random() + 0.5,
+    dy: Math.random() + 0.5,
+    ttl: Math.floor(Math.random()*50) + 50 // time to live in frames
+  }
+}
+
+function createParticleElement() {
+  var elm = document.createElement('span');
+  elm.style.border = '1px solid blue';
+  elm.style.position = 'absolute';
+  elm.style.width = elm.style.height = '3px';
+  container.appendChild(elm);
+  return elm; 
+}
+
+function update() {
+  for (var i=0; i < particles.length; i++) {
+    if (i == 0) console.log(i+' '+particles[i].ttl);
+    particles[i].ttl = particles[i].ttl - 1;
+    if (particles[i].ttl > 0) {
+      particles[i].x = particles[i].x + particles[i].dx;
+      particles[i].y = particles[i].y + particles[i].dy;
+      particles[i].elm.style.left = Math.floor(particles[i].x) + 'px';
+      particles[i].elm.style.top = Math.floor(particles[i].y) + 'px';
+    } else {
+      particles[i] = createParticle(particles[i].elm);
+    }
+  }
+}
+ 
+
+
+var x = <%=@stock[:price] %>;
+
+
+
+x=0.5*x;
+
+
+
+
+
+
+window.onload = function() {
+  container = document.getElementById('container') ;
+  particles = [];
+  for (var i=0; i < x; i++) {
+    particles.push(createParticle());
+  }
+
+  setInterval("update()", 50);
+}       
+
+
+
+    </script>
+<% end %>
+
+
+
+
+
+<% if @stock[:price]=="0.00" %>
+       <span>There were no results for your query</span><br/><br/>
+<% else %>
+
+<p>The price for <b><%=@input %></b> stock is:<p>$<%=@stock[:price] %><p>
+<div id='container' style="width:320px; height: 200px"> </div>
+
+<% end %>
+
+
+

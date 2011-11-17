@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Quoter</title>
+  <%= stylesheet_link_tag "site" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield :javascript %>
+</head>
+<body>
+
+
+
+<div id="navbar">   
+           <ul>
+        <li><a href="stocks">Home</a></li>
+	</ul>
+  
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>
