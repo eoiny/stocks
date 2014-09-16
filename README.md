@@ -13,5 +13,5 @@ I just deployed a very simple ruby on rails app to Heroku. When a submit button 
 
 The something "cool", was a very (extremely!) simple visualisation using a JavaScript picked up from I-forget-where and modified slightly to return a bunch of floating blue squares - the number of them proportional to the value of the stock returned.
 
-##Check out myapp here:
+##Check out my live app here:
 [http://hollow-summer-9555.herokuapp.com/stocks](http://hollow-summer-9555.herokuapp.com/stocks)
