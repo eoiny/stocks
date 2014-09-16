@@ -1,4 +1,4 @@
-#Stock Quoter App
+#Stock Quotes App
 
 As part of the Deployment module in my NCI post-grad we were given the following exercise:
  1. Develop a simple web page that has a text entry field and a button on it.
